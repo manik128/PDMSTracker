@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:background="#ffffff"
+
+
+
+    android:layout_height="wrap_content"
+    android:id="@+id/relativeLayout2"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/linear"
+
+       android:background="#2495b7"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvdes"
+            android:paddingTop="5dp"
+            android:textColor="#ffff"
+
+            android:layout_weight="1"
+            android:paddingBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="Task Description"/>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearone"
+        android:layout_below="@+id/linear"
+        android:weightSum="3">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvsub"
+        android:paddingTop="5dp"
+        android:layout_weight="1"
+        android:paddingBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:text="Task Date"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:layout_weight="1"
+        android:layout_above="@+id/tvvat"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tskdt"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_above="@+id/tvvat"
+        android:text="11013"
+        android:layout_weight="1"
+
+       />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineartwo"
+        android:layout_below="@+id/linearone"
+        android:weightSum="3">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvvat"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+
+        android:text="From time"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_weight="1"
+        />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/frtime"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="Bike"
+        android:layout_weight="1"
+
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearthree"
+        android:layout_below="@+id/lineartwo"
+        android:weightSum="3">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvbharath"
+        android:layout_below="@+id/lineartwo"
+        android:layout_weight="1"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:text="To time"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:layout_weight="1"
+        android:layout_below="@+id/tvvat"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/totime"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="Engine oil"
+        android:layout_weight="1"
+
+        android:layout_below="@+id/tvvat"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+       />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearfour"
+        android:layout_below="@+id/linearthree"
+        android:weightSum="3">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvkalayan"
+        android:layout_below="@+id/linearthree"
+        android:layout_weight="1"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:text="task Description"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+
+        android:layout_below="@+id/tvbharath"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_weight="1"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView3" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tskdesc"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="8331810245"
+        android:layout_weight="1"
+android:layout_marginRight="15dp"
+        android:layout_below="@+id/tvbharath"
+
+         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearfive"
+        android:layout_below="@+id/linearfour"
+        android:weightSum="3">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvmaterial"
+        android:layout_below="@+id/linearfour"
+        android:layout_weight="1"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:text="Contact Person"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:layout_weight="1"
+        android:layout_below="@+id/tvkalayan"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/contper"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_below="@+id/tvkalayan"
+        android:text="12.30Pm"
+
+        android:layout_weight="1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearsix"
+        android:layout_below="@+id/linearfive"
+        android:weightSum="3">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvmaterial2"
+        android:layout_below="@+id/linearfive"
+        android:layout_weight="1"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:text="From address"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:layout_weight="1"
+        android:layout_below="@+id/textView"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView6" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/address"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_below="@+id/contper"
+        android:text="12.30Pm"
+
+        android:layout_weight="1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/linearlist"
+        android:layout_below="@+id/linearsix"
+       android:layout_marginTop="30dp"
+
+        android:background="#2495b7"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvlist"
+            android:paddingTop="5dp"
+            android:textColor="#ffff"
+
+            android:layout_weight="1"
+            android:paddingBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="List Of Items"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="left"
+            android:layout_alignParentRight="true"
+            android:text="Return Items"
+
+            android:background="#0189B1"
+            android:id="@+id/btnreturn"
+            android:textColor="#ffffff"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id = "@+id/relativeLayout1"
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:background="#53b1ce"
+        android:layout_below="@+id/linearlist"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1"
+            android:gravity = "center"
+            android:padding = "8dp"
+            android:textColor="#ffff"
+            android:text = "@string/sNo"
+            />
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1"
+            android:gravity = "center"
+            android:padding = "8dp"
+            android:textColor="#ffff"
+            android:text = "@string/Items"
+            />
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1"
+            android:gravity = "center"
+            android:padding = "8dp"
+            android:textColor="#ffff"
+            android:text = "@string/Qty"
+            />
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1"
+            android:gravity = "center"
+            android:padding = "8dp"
+            android:textColor="#ffff"
+            android:text = "Action"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+
+
+        android:background="#0077A4"
+        android:orientation="horizontal"
+
+        android:id="@+id/linearLayout2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Completed"
+            android:background="#0189B1"
+            android:id="@+id/btncomplete"
+            android:textColor="#ffffff"
+
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="delay"
+            android:id="@+id/btndelay"
+            android:background="#01799E"
+            android:textColor="#ffff"
+            android:layout_weight="1"
+
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Not done"
+            android:id="@+id/btnnotdone"
+            android:background="#0189B1"
+            android:textColor="#ffff"
+            android:layout_weight="1"
+
+            />
+    </LinearLayout>
+    <ProgressBar
+        style="@style/Base.Widget.AppCompat.ProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:id="@+id/progress"
+        android:layout_below="@+id/relativeLayout1"
+
+        android:visibility="visible" />
+
+    <ListView
+        android:id = "@+id/listview"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:divider = "@null"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.atss.admin.concealtracking">
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="com.javapapers.currentlocationinmap.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.UPDATE_DEVICE_STATS"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+
+    <application
+        android:name="com.atss.admin.concealtracking.Mainclass"
+        android:allowBackup="true"
+        android:icon="@drawable/logofinal2"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.atss.admin.concealtracking.Splash"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.atss.admin.concealtracking.Login"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name="com.atss.admin.concealtracking.Home"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.atss.admin.concealtracking.MapActivity"
+            android:screenOrientation="portrait"/>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAGKFaDYdRl5h56XXTa8cd1a6h7gb8x31k" />
+
+        <activity android:name="com.atss.admin.concealtracking.Enquiry"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.atss.admin.concealtracking.Otp"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.atss.admin.concealtracking.messagebox"
+            android:screenOrientation="portrait"/>
+
+        <receiver android:name="com.atss.admin.concealtracking.Otprecieve">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <service  android:name="com.atss.admin.concealtracking.MyFirebaseMessagingService"   android:exported="false">>
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.atss.admin.concealtracking.MyFirebaseInstanceIDService"  android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name="com.atss.admin.concealtracking.TabHome" android:icon="@drawable/logonew2"
+
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.atss.admin.concealtracking.TaskDetail"  android:screenOrientation="portrait"></activity>
+        <receiver
+            android:name="NetworkChangeReceiver"
+            android:label="NetworkChangeReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

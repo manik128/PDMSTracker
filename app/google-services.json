@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "22342092914",
+    "firebase_url": "https://concealtracking.firebaseio.com",
+    "project_id": "concealtracking",
+    "storage_bucket": "concealtracking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22342092914:android:3d3649fe5b233d96",
+        "android_client_info": {
+          "package_name": "com.atss.admin.concealtracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22342092914-t3n6r4kpsq7hk5209an59mage8l936n2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.atss.admin.concealtracking",
+            "certificate_hash": "0b64ce8b2120e816c91aea5b4c45e38f21a4f0ee"
+          }
+        },
+        {
+          "client_id": "22342092914-76k8fijl47r1ou56tgpiit40clkl0g2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjqDg5ycDLsRuJtLFvADVDWDpCoFRA3bE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22342092914-76k8fijl47r1ou56tgpiit40clkl0g2t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

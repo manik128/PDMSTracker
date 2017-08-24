@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_task"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.atss.admin.concealtracking.Task">
+    <!-- <Button
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:text="New Store"
+         android:padding="20dp"
+         android:textSize="15dp"
+         android:paddingBottom="20dp"
+         android:textColor="#FFFFFF"
+         android:id="@+id/addstr"
+         />!-->
+    <ProgressBar
+        style="@style/Base.Widget.AppCompat.ProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:id="@+id/progressev"
+        android:layout_centerInParent="true"
+        android:visibility="visible" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tasklay"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+    <!--<android.support.v7.widget.CardView-->
+    <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+    <!--android:id="@+id/crd"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="1dp"-->
+
+    <!--card_view:cardCornerRadius="5dp"-->
+    <!--card_view:cardBackgroundColor="#FFFFFF"-->
+    <!--android:layout_weight="2"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_marginLeft="10dp"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--android:elevation="50dp"-->
+    <!--&gt;-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical"-->
+    <!--android:layout_gravity="center"-->
+    <!--&gt;-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:background="@color/blue"-->
+    <!--android:padding="10dp"-->
+    <!--&gt;-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Task Descriprition"-->
+    <!--android:gravity="left"-->
+
+    <!--android:textColor="#FFFFFF"-->
+    <!--android:textSize="15dp"/>-->
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="15-04-2017 14:56"-->
+    <!--android:id="@+id/tasktime"-->
+    <!--android:gravity="right"-->
+    <!--android:textColor="#FFFFFF"-->
+    <!--android:textSize="15dp"/>-->
+    <!--</LinearLayout>-->
+
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text=""-->
+    <!--android:gravity="left"-->
+    <!--android:id="@+id/taskdesc"-->
+    <!--android:padding="10dp"-->
+
+    <!--android:textSize="15dp"/>-->
+    <!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="right"-->
+    <!--android:text="View Details"-->
+    <!--android:padding="8dp"-->
+    <!--style="@style/Widget.AppCompat.Button.Colored"-->
+    <!--android:textAllCaps="false"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--android:textSize="15dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:textColor="#FFFFFF"-->
+
+    <!--android:id="@+id/genord"-->
+    <!--/>-->
+
+    <!--</LinearLayout>-->
+
+    <!--</android.support.v7.widget.CardView>-->
+</RelativeLayout>

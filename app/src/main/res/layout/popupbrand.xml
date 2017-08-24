@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:padding="5dp"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:weightSum="2"
+
+android:layout_below="@+id/input_layout_email"
+        android:background="#0077A4"
+
+        android:orientation="horizontal"
+
+        android:id="@+id/linearLayout2">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:background="#0189B1"
+            android:id="@+id/btncan"
+            android:textColor="#ffffff"
+
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="ok"
+            android:id="@+id/btnok"
+            android:background="#01799E"
+            android:textColor="#ffff"
+            android:layout_weight="1"
+
+            />
+    </LinearLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_email"
+        android:layout_width="match_parent"
+
+        android:layout_marginTop="25dp"
+        android:inputType="textEmailAddress"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edreason"
+            android:hint="Reason"
+
+            android:backgroundTint="#FFFFFF"
+
+            android:padding="15dp"
+
+            android:maxLines="5"
+            android:textSize="20dp"
+            android:drawablePadding="10dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:paddingTop="8dp"
+
+            android:layout_marginBottom="5dp"
+            android:paddingBottom="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_centerHorizontal="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+</RelativeLayout>
+
+
