@@ -28,7 +28,7 @@ import org.json.JSONObject;
 
 public class localdb {
 	private static final String DATABASE_NAME = "allmsgstore.db";
-	 private static final int DATABASE_VERSION = 2;
+	 private static final int DATABASE_VERSION = 3;
 	 public static final String EMPLOYEES_TABLE = "msgstore";
 	 private static final String DATABASE_PATH="/data/data/com.atss.getrepair4/databases/";
 	 public static final String TABLE = "orderdetails";

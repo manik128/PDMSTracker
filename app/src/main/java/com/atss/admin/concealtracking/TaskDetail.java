@@ -415,7 +415,7 @@ public class TaskDetail extends AppCompatActivity {
             //insert();
             String output = null;
 
-            String url = "http://122.166.186.77:8082/ConcealTrackingApp/TaskStatus";
+            String url = test.FILE_PATH+"/TaskStatus";
             nameValuePairs = new ArrayList<NameValuePair>();
 
             nameValuePairs.add(new BasicNameValuePair("taskid",id));
@@ -621,7 +621,7 @@ public class TaskDetail extends AppCompatActivity {
             //insert();
             String output = null;
 
-            String url = "http://122.166.186.77:8082/ConcealTrackingApp/Tasknotdone";
+            String url = test.FILE_PATH+"/Tasknotdone";
             nameValuePairs = new ArrayList<NameValuePair>();
 
             nameValuePairs.add(new BasicNameValuePair("taskid",id));
@@ -740,7 +740,7 @@ public class TaskDetail extends AppCompatActivity {
             String output = null;
             String addr1 = "1554,sdfjfkfds,sdfhdjkfsdf";
             //System.out.println("passing address: " + addr);
-            String url = "http://122.166.186.77:8082/ConcealTrackingApp/RetrievItem";
+            String url = test.FILE_PATH+"/RetrievItem";
             nameValuePairs = new ArrayList<NameValuePair>();
             nameValuePairs.add(new BasicNameValuePair("taskid",id));
             //nameValuePairs.add(new BasicNameValuePair("lat", lat));

@@ -1,12 +1,17 @@
 package com.atss.admin.concealtracking;
 
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.KeyListener;
@@ -81,6 +86,7 @@ public class Chat extends Fragment {
                              Bundle savedInstanceState) {
 
             mInflater = LayoutInflater.from(getActivity());
+        getActivity().registerReceiver(this.broadCastNewMessage, new IntentFilter("bcNewMessage"));
             sharedpreferences = getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
             final View rootView = inflater.inflate(R.layout.fragment_chat, container, false);
             sendmsg=(Button)rootView.findViewById(R.id.sendmsg);
@@ -112,7 +118,16 @@ public class Chat extends Fragment {
         //hideSoftKeyboard();
         operation();
 
+        InputMethodManager imm = (InputMethodManager) getActivity()
+                .getSystemService(Context.INPUT_METHOD_SERVICE);
 
+        if (imm.isAcceptingText()) {
+            Toast.makeText(getActivity(), "Keyboard shown",
+                    Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getActivity(), "Keyboard not shown",
+                    Toast.LENGTH_LONG).show();
+        }
         if(newmessage!=null){
             Calendar c1 = Calendar.getInstance();
             SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm a");
@@ -332,7 +347,7 @@ public class Chat extends Fragment {
             String output = null;
             String addr1 = "1554,sdfjfkfds,sdfhdjkfsdf";
             System.out.println("passing address: " + addr);
-            String url = "http://122.166.186.77:8082/ConcealTrackingApp/SendMessage";
+            String url = test.FILE_PATH+"/SendMessage";
             nameValuePairs = new ArrayList<NameValuePair>();
             nameValuePairs.add(new BasicNameValuePair("userid", Integer.toString(emp)));
 
@@ -360,7 +375,7 @@ public class Chat extends Fragment {
 
         @Override
         protected void onPostExecute(String output) {
-            //System.out.println("conn:" + output+access);
+            System.out.println("conn:" + output);
             try {
 
                 JSONObject json_data = new JSONObject(output);
@@ -394,5 +409,52 @@ public class Chat extends Fragment {
 
         }
     }
+    @Override
+    public void onResume() {
+        super.onResume();
 
+    }
+    BroadcastReceiver broadCastNewMessage = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // here you can update your db with new messages and update the ui (chat message list)
+            newmessage=sharedpreferences.getString("newmsg", null);
+
+            if(newmessage!=null){
+                Calendar c1 = Calendar.getInstance();
+                SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm a");
+                final String strDate1 = sdf1.format(c1.getTime());
+                ldb.rcvmsg(newmessage,strDate1);
+                mview1 = mInflater.inflate(R.layout.recievemsg, null);
+                TextView tx3 = (TextView) mview1.findViewById(R.id.msg2);
+                TextView tx4 = (TextView) mview1.findViewById(R.id.msgt2);
+
+                tx4.setText(strDate1);
+                //tx3.setMovementMethod(new ScrollingMovementMethod());
+                tx3.setText(newmessage);
+                msgbox.addView(mview1);
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+
+                editor.remove("newmsg");
+
+
+                editor.commit();
+            }
+            scroller.post(new Runnable() {
+
+                @Override
+                public void run() {
+                    scroller.fullScroll(ScrollView.FOCUS_DOWN);
+
+                }
+
+            });
+//            Fragment frg = null;
+//            frg = getActivity().getSupportFragmentManager().findFragmentByTag("Your_Fragment_TAG");
+//            final android.support.v4.app.FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+//            ft.detach(frg);
+//            ft.attach(frg);
+//            ft.commit();
+        }
+    };
 }

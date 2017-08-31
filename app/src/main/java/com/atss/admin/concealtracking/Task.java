@@ -152,7 +152,7 @@ public class Task extends Fragment {
             String output = null;
             String addr1 = "1554,sdfjfkfds,sdfhdjkfsdf";
             //System.out.println("passing address: " + addr);
-            String url = "http://122.166.186.77:8082/ConcealTrackingApp/RetrieveTask";
+            String url = test.FILE_PATH+"/RetrieveTask";
             nameValuePairs = new ArrayList<NameValuePair>();
             nameValuePairs.add(new BasicNameValuePair("userid", Integer.toString(empid)));
             //nameValuePairs.add(new BasicNameValuePair("lat", lat));
@@ -209,7 +209,7 @@ public class Task extends Fragment {
                         final String totm= jo.getString("totime");
                         final String conper= jo.getString("personname");
                         final String conid= jo.getString("contactperson");
-                        final String faddr= jo.getString("fromaddress");
+                        final String faddr= jo.getString("toaddress");
                         final String connum= jo.getString("mobileno");
                        System.out.print("taskdesc"+tskdesc);
 //                    mclass.setTaskdate(jo.getString("taskdate"));

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
@@ -44,7 +45,7 @@ public class Login extends AppCompatActivity {
     ActionBar abr;
     Button b1;
     String token;
-    String id;
+    String id,deviceid;
     EditText ed1,ed2;
     TextView tx1,greet;
     ArrayList<NameValuePair> nameValuePairs;;
@@ -72,7 +73,10 @@ public class Login extends AppCompatActivity {
         checkPermission2();
         checkPermission3();
      //   abr.hide();
-
+        TelephonyManager telephonyManager;
+        telephonyManager = (TelephonyManager) getSystemService(Context.
+                TELEPHONY_SERVICE);
+        deviceid=telephonyManager.getDeviceId();
 
 
 
@@ -175,12 +179,13 @@ public class Login extends AppCompatActivity {
             String output = null;
             String addr1 = "1554,sdfjfkfds,sdfhdjkfsdf";
             System.out.println("passing address: " + addr);
-            String url = "http://122.166.186.77:8082/ConcealTrackingApp/Bdeuser";
+            String url = test.FILE_PATH+"/Bdeuser";
             nameValuePairs = new ArrayList<NameValuePair>();
 
             nameValuePairs.add(new BasicNameValuePair("userid", user));
             //nameValuePairs.add(new BasicNameValuePair("accessid",access));
             nameValuePairs.add(new BasicNameValuePair("password", pass));
+            nameValuePairs.add(new BasicNameValuePair("uid", deviceid));
 
             //output = getOutputFromUrl(url);
             try {
@@ -234,6 +239,7 @@ public class Login extends AppCompatActivity {
                     editor.putString("access", access);
                     editor.putString("comp", comp);
                     editor.putInt("empid", code);
+                    editor.putString("uuid", deviceid);
                     editor.commit();
                     Intent en = new Intent(getApplicationContext(), TabHome.class);
                     startActivity(en);

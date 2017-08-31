@@ -1,20 +1,15 @@
 package com.atss.admin.concealtracking;
 
-import android.app.ActionBar;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -36,7 +31,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -61,7 +55,7 @@ public class TabHome extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    String tken,msg,chkdut,comp;
+    String tken,msg,chkdut,comp,uid;
     TextView menubtn;
     Boolean lgout;
     int emp, msgc;
@@ -98,7 +92,7 @@ public class TabHome extends AppCompatActivity {
         //viewPager.setCurrentItem(2);
        emp=sharedpreferences.getInt("empid",0);
         tken=sharedpreferences.getString("regId", null);
-
+        uid=sharedpreferences.getString("uuid", null);
         tokgen=sharedpreferences.getBoolean("tokengen", false);
         lgout=sharedpreferences.getBoolean("logout", false);
         msgc=sharedpreferences.getInt("msgcnt",0);
@@ -299,6 +293,7 @@ if(chkdut.equalsIgnoreCase("on")){
         if(getIntent().getExtras()!=null) {
             pass = getIntent().getExtras().getInt("pass");
             msg= getIntent().getExtras().getString("msgcnt");
+
             //Toast.makeText(MainActivity.this, "succes" + pass, Toast.LENGTH_LONG).show();
             if (pass == 1) {
                 //Chat ab = new Chat();
@@ -393,12 +388,15 @@ if(chkdut.equalsIgnoreCase("on")){
             System.out.println("passing address: " + addr);
             String url = test.FILE_PATH+"/Registeringdevice";
             nameValuePairs = new ArrayList<NameValuePair>();
-            nameValuePairs.add(new BasicNameValuePair("empid", Integer.toString(emp)));
-
-
-            nameValuePairs.add(new BasicNameValuePair("token", tken));
-            nameValuePairs.add(new BasicNameValuePair("login", "yes"));
-
+//            nameValuePairs.add(new BasicNameValuePair("empid", Integer.toString(emp)));
+//
+//
+//            nameValuePairs.add(new BasicNameValuePair("token", tken));
+//            nameValuePairs.add(new BasicNameValuePair("login", "yes"));
+            nameValuePairs.add(new BasicNameValuePair("uid", uid));
+//
+//
+           nameValuePairs.add(new BasicNameValuePair("token", tken));
             //output = getOutputFromUrl(url);
             //output = getOutputFromUrl(url);
             try {
@@ -662,12 +660,16 @@ if(chkdut.equalsIgnoreCase("on")){
             String output = null;
             String addr1 = "1554,sdfjfkfds,sdfhdjkfsdf";
             System.out.println("passing address: " + addr);
-            String url = test.FILE_PATH+"/Devicechk";
+            String url = test.FILE_PATH+"/Devicecheck";
             nameValuePairs = new ArrayList<NameValuePair>();
+//            nameValuePairs.add(new BasicNameValuePair("empid", Integer.toString(emp)));
+//
+//
+//            nameValuePairs.add(new BasicNameValuePair("token", tken));
             nameValuePairs.add(new BasicNameValuePair("empid", Integer.toString(emp)));
 
 
-            nameValuePairs.add(new BasicNameValuePair("token", tken));
+            nameValuePairs.add(new BasicNameValuePair("uuid",  uid));
 
             //output = getOutputFromUrl(url);
             //output = getOutputFromUrl(url);
@@ -754,6 +756,14 @@ if(chkdut.equalsIgnoreCase("on")){
         super.onResume();
 
         //IntentFilter intentFilter = new IntentFilter("SmsMessage.intent.MAIN");
+//        android.app.Fragment currentFragment = getFragmentManager().findFragmentByTag("Chat");
+//        FragmentTransaction fragTransaction = getFragmentManager().beginTransaction();
+//        fragTransaction.detach(currentFragment);
+//        fragTransaction.attach(currentFragment);
+//        fragTransaction.commit();
+//        super.onResumeFragments();
+//        Toast.makeText(TabHome.this, "onreume",
+//                Toast.LENGTH_LONG).show();
         mIntentReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -782,6 +792,9 @@ if(chkdut.equalsIgnoreCase("on")){
         //this.registerReceiver(mIntentReceiver, intentFilter);
 
     }
+
+
+
     public void listpopup() {
 
         //listPopupWindow.setOnItemClickListener(TabHome.this);

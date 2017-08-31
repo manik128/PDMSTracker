@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
@@ -33,6 +34,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     SharedPreferences sharedpreferences;
     String msg="",newmessage="",mainmsg="";
     int mcont=0,msgc;
+    Context con;
     UtilityClass uc;
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -67,17 +69,21 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             newmessage="";
         }
         if(!uc.isAppIsInBackground(this)){
-            Intent intent = new Intent(this, TabHome.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra("pass",1);
+            //con=this;
+//            Intent intent = new Intent(this, TabHome.class);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            intent.putExtra("pass",1);
+
+
             SharedPreferences.Editor editor = sharedpreferences.edit();
 
             editor.putString("newmsg", mainmsg);
             editor.putInt("msgcnt", mcont);
 
             editor.commit();
-            startActivity(intent);
-
+            this.sendBroadcast(new Intent().setAction("bcNewMessage"));
+           // startActivity(intent);
+             //con.finish();
             Uri sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
             Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), sound);
             r.play();
